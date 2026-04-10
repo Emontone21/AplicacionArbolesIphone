@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ── Light (default) ─────────────────────────────────────────────────────── */
+:root {
+  --bg-primary:   #ffffff;
+  --bg-secondary: #f7f6f3;
+  --bg-card:      #ffffff;
+  --text-primary:   #37352f;
+  --text-secondary: #787774;
+  --text-muted:     #9b9a97;
+  --border:  #e9e9e7;
+  --accent:  #2383e2;
+
+  --cat-trabajo:       #378ADD;
+  --cat-trabajo-vein:  #185FA5;
+  --cat-personal:      #D4537E;
+  --cat-personal-vein: #993556;
+  --cat-salud:         #5A9216;
+  --cat-salud-vein:    #3B6D11;
+  --cat-estudio:       #7F77DD;
+  --cat-estudio-vein:  #534AB7;
+
+  --leaf-pending:     #D3D1C7;
+  --leaf-pending-vein:#B0AEA3;
+  --trunk-color:  #8B6914;
+  --trunk-dark:   #5C4A12;
+  --branch-color: #7A5C10;
+
+  --health-good: #5A9216;
+  --health-mid:  #D97706;
+  --health-bad:  #DC2626;
+  --water-color: #3B9EE8;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Dark ─────────────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-primary:   #191919;
+  --bg-secondary: #252525;
+  --bg-card:      #252525;
+  --text-primary:   #e6e6e5;
+  --text-secondary: #9b9a97;
+  --text-muted:     #6b6b69;
+  --border: #373737;
+
+  --cat-trabajo:       #4A9EF5;
+  --cat-trabajo-vein:  #2B7AD4;
+  --cat-personal:      #E8658F;
+  --cat-personal-vein: #C04470;
+  --cat-salud:         #7AB82E;
+  --cat-salud-vein:    #4F8A15;
+  --cat-estudio:       #9A92F0;
+  --cat-estudio-vein:  #6B5FD0;
+
+  --leaf-pending:     #4A4A5A;
+  --leaf-pending-vein:#3A3A4A;
+  --trunk-color:  #A07820;
+  --trunk-dark:   #705218;
+  --branch-color: #906A18;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--bg-primary);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 100dvh;
+}
+
+@media (min-width: 768px) {
+  #root { max-width: 560px; }
+}
+
+input, button, select { font: inherit; color: inherit; }
+button { cursor: pointer; border: none; background: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:      0.01ms !important;
+    animation-iteration-count: 1   !important;
+    transition-duration:     0.01ms !important;
+  }
+}

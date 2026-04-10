@@ -1,0 +1,173 @@
+.task-list {
+  padding: 4px 0 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-list__empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 32px 16px;
+}
+
+/* ── Task item ─────────────────────────────────────────────────────────────── */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s ease, opacity 0.3s ease;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item:hover {
+  background: var(--bg-secondary);
+}
+
+.task-item--done {
+  opacity: 0.48;
+}
+
+
+/* Check button */
+.task-item__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--check-color);
+  flex-shrink: 0;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.task-item__check:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--check-color) 12%, transparent);
+}
+
+.task-item__check:disabled {
+  cursor: default;
+}
+
+.task-item__circle {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+
+/* Text */
+.task-item__text {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.task-item--done .task-item__text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Category badge */
+.task-item__badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Delete button */
+.task-item__delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.15s, background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.task-item:hover .task-item__delete {
+  opacity: 1;
+}
+
+.task-item__delete:hover {
+  background: color-mix(in srgb, var(--health-bad) 10%, transparent);
+  color: var(--health-bad);
+}
+
+/* ── Historial ─────────────────────────────────────────────────────────────── */
+.historial {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.historial__toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 4px;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.historial__toggle:hover {
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+}
+
+.historial__label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.historial__count {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--health-good) 10%, transparent);
+  color: var(--health-good);
+}
+
+.historial__chevron {
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.historial__chevron--open {
+  transform: rotate(180deg);
+}
+
+.historial__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.historial__list .task-item {
+  border-radius: 4px;
+}

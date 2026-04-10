@@ -1,0 +1,26 @@
+.wc-overlay {
+  /* Full-width strip at the top of the tree container */
+  position: absolute;
+  top: 3%;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.wc__can {
+  position: absolute;
+  right: 5%;
+  top: 10px;
+  opacity: 0;
+  transform-origin: 75% 50%;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.14));
+}
+
+.wc__drop {
+  position: absolute;
+  top: 62px;
+  opacity: 0;
+  transform-origin: 50% 0;
+}

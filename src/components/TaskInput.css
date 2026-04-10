@@ -1,0 +1,121 @@
+.task-input-wrap {
+  padding: 14px 0 6px;
+}
+
+/* ── Blocked notice ─────────────────────────────────────────────────────────── */
+.task-input__blocked {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--health-mid);
+  background: color-mix(in srgb, var(--health-mid) 8%, transparent);
+  border-left: 2px solid var(--health-mid);
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border-radius: 0 3px 3px 0;
+  line-height: 1.45;
+}
+
+.task-input__blocked svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Form ─────────────────────────────────────────────────────────────────── */
+.task-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-input--blocked {
+  opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Category chips */
+.task-input__categories {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.task-input__categories::-webkit-scrollbar {
+  display: none;
+}
+
+.task-input__chip {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.task-input__chip:hover:not(:disabled) {
+  color: var(--text-secondary);
+  border-color: color-mix(in srgb, var(--chip-color) 40%, transparent);
+}
+
+.task-input__chip--active {
+  color: var(--chip-color);
+  background: color-mix(in srgb, var(--chip-color) 8%, transparent);
+  border-color: color-mix(in srgb, var(--chip-color) 35%, transparent);
+}
+
+/* Input row */
+.task-input__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1.5px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.task-input__row:focus-within {
+  border-color: var(--text-primary);
+}
+
+.task-input__field {
+  flex: 1;
+  padding: 9px 0;
+  font-size: 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.task-input__field::placeholder {
+  color: var(--text-muted);
+}
+
+.task-input__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.task-input__btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.task-input__btn:not(:disabled):hover {
+  opacity: 0.75;
+}
